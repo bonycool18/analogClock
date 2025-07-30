@@ -1,7 +1,9 @@
 const pug = require('pug');
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const {
+    execSync
+} = require('child_process');
 const csso = require('csso'); // Import the csso module
 const terser = require('terser'); // Import terser for JS minification
 
@@ -13,7 +15,9 @@ if (!fs.existsSync('build')) {
 // Function to create empty folders
 const createFolder = (folderPath) => {
     if (!fs.existsSync(folderPath)) {
-        fs.mkdirSync(folderPath, { recursive: true });
+        fs.mkdirSync(folderPath, {
+            recursive: true
+        });
     }
 };
 
@@ -25,7 +29,9 @@ createFolder('build/js');
 const copyFiles = (src, dest) => {
     if (!fs.existsSync(dest)) {
         // Create the destination folder if it doesn't exist
-        fs.mkdirSync(dest, { recursive: true });
+        fs.mkdirSync(dest, {
+            recursive: true
+        });
     }
 
     const files = fs.readdirSync(src);
@@ -52,7 +58,9 @@ copyFiles('public/images', 'build/images');
 // Function to transpile JavaScript files with Babel
 const transpileJavaScript = () => {
     try {
-        execSync('npx babel public/js --out-dir build/js', { stdio: 'inherit' });
+        execSync('npx babel public/js --out-dir build/js', {
+            stdio: 'inherit'
+        });
     } catch (error) {
         console.error('Error transpiling JavaScript with Babel:', error);
     }
@@ -118,60 +126,24 @@ const cleanupUnMinifiedFiles = () => {
 };
 
 // Define pages and their variables
-const pages = [
-    {
-        file: 'index.pug',
-        output: 'build/index.html',
-        variables: {
-            title: 'Home',
-            description: 'Description of Homepage',
-            pageClass: "homePage",
-            cssFile: "style.min.css",
-            jsFile: "script.min.js",
-            fileExtension: ".html",
-        }
-    },
-    {
-        file: 'about.pug',
-        output: 'build/about.html',
-        variables: {
-            title: 'About Us',
-            description: 'Description of About Us',
-            pageClass: "aboutUsPage",
-            cssFile: "style.min.css",
-            jsFile: "script.min.js",
-            fileExtension: ".html",
-        }
-    },
-    {
-        file: 'contact.pug',
-        output: 'build/contact.html',
-        variables: {
-            title: 'Contact Us',
-            description: 'Description of Contact Us',
-            pageClass: "contactUsPage",
-            cssFile: "style.min.css",
-            jsFile: "script.min.js",
-            fileExtension: ".html",
-        }
-    },
-    {
-        file: 'privacy.pug',
-        output: 'build/privacy.html',
-        variables: {
-            title: 'Privacy Policy',
-            description: 'Description of Privacy Policy',
-            pageClass: "privacyPage",
-            cssFile: "style.min.css",
-            jsFile: "script.min.js",
-            fileExtension: ".html",
-        }
-    },
-];
+const pages = [{
+    file: 'index.pug',
+    output: 'build/index.html',
+    variables: {
+        title: 'Home',
+        description: 'Description of Homepage',
+        pageClass: "homePage",
+        cssFile: "style.min.css",
+        jsFile: "script.min.js",
+        fileExtension: ".html",
+    }
+}, ];
 
 // Compile each Pug file with its respective variables
 pages.forEach((page) => {
-    const compiledHtml = pug.renderFile(`views/${page.file}`, { ...page.variables, }); // pretty: true,
+    const compiledHtml = pug.renderFile(`views/${page.file}`, {
+        ...page.variables,
+    }); // pretty: true,
     fs.writeFileSync(page.output, compiledHtml);
 });
 

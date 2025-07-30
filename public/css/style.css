@@ -1,0 +1,1347 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* -------------------------------------- Common Stylesheet Start ------------------------------------- */
+
+:root {
+    --primaryFontFamily: "Montserrat", sans-serif;
+    --headingFontFamily: "Bebas Neue", sans-serif;
+    --defaultFontSize: 18px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: var(--defaultFontSize);
+}
+
+body {
+    font-family: var(--primaryFontFamily);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--headingFontFamily);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.btn {
+    font-size: 0.889rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: #ed646c;
+    color: #ffffff;
+    border-color: #ed646c;
+}
+
+.btn-primary:hover {
+    background-color: #c93942;
+}
+
+.btn-secondary {
+    background-color: #2D315E;
+    color: #ffffff;
+    border-color: #2D315E;
+}
+
+.btn-secondary:hover {
+    background-color: #1e2146;
+}
+
+.mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0;
+}
+
+/* -------------------------------------- Common Stylesheet End --------------------------------------- */
+
+/* -------------------------------------- Haeder Stylesheet Start ------------------------------------- */
+
+.mainContainer .mainHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+    z-index: 999;
+    background-color: transparent;
+    transition: all 0.25s linear;
+}
+
+.mainContainer .mainHeader.mainHeader--scrolled,
+.mainContainer .mainHeader.mainHeader--menuOpened {
+    background-color: #201E1E;
+}
+
+.mainContainer .mainHeader > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainHeader .mainHeader__logo {
+    width: auto;
+    height: 75px;
+}
+
+.mainContainer .mainHeader .mainHeader__logo a {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+.mainContainer .mainHeader .mainHeader__logo a img {
+    width: auto;
+    height: 100%;
+}
+
+.mainContainer .mainHeader .mainHeader__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    position: relative;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox .mainHeader__burgerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox .mainHeader__burgerButton span.line {
+    position: absolute;
+    left: 0;
+    transform: translateY(50%);
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.25s linear;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox .mainHeader__burgerButton span.line.first {
+    top: calc(0px + 4px);
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox .mainHeader__burgerButton span.line.second {
+    top: calc(50% - 0px);
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox .mainHeader__burgerButton span.line.third {
+    top: calc(100% - 4px);
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox.opened .mainHeader__burgerButton span.line.first {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox.opened .mainHeader__burgerButton span.line.second {
+    opacity: 0;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox.opened .mainHeader__burgerButton span.line.third {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation {
+    position: relative;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation ul {
+    display: flex;
+    justify-content: flex-end;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* .mainContainer .mainHeader .mainHeader__right .mainHeader__navigation ul li::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 30px;
+} */
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation ul li a {
+    display: block;
+    font-size: 1.111rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation > ul > li > a::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #ed646c;
+    transition: all 0.25s linear;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation > ul > li:hover > a::after {
+    width: 100%;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation ul ul {
+    display: none;
+
+    padding: 0 0 0 20px;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation ul ul.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainHeader .mainHeader__right .mainHeader__navigation ul ul li {
+    margin: 0;
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: calc(100% + 30px);
+    left: 0;
+    transform-origin: 0 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(0);
+    transition: all 0.25s linear;
+}
+
+.mainContainer .mainHeader .mainHeader__right:hover .subMenusSection {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists {
+    display: flex;
+    flex-direction: column;
+
+    /* min-width: 1200px; */
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists li {
+    display: block;
+    padding: 0;
+    margin: 0 0 10px;
+    /* width: 50%; */
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists li a {
+    display: block;
+    font-size: 1.222rem;
+    font-weight: 600;
+    color: #333333;
+    text-decoration: none;
+    padding: 0;
+    border: none;
+    text-transform: uppercase;
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists li a:hover {
+    color: #ed646c;
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists li ul.thirdLevelMenuLists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists li ul.thirdLevelMenuLists li {
+    width: 100%;
+}
+
+.mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists li ul.thirdLevelMenuLists li a {
+    font-weight: 400;
+}
+
+/* -------------------------------------- Header Stylesheet End --------------------------------------- */
+
+/* -------------------------------------- Body Content Stylesheet Start ------------------------------- */
+
+.mainContainer .mainBodyContent {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* -------------------------------------- Sidebar Stylesheet Start ------------------------------------ */
+
+.mainContainer .mainBodyContent .sidebar {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    z-index: 999;
+    width: 280px;
+    min-height: calc(100vh - 65px);
+    /* background-color: #eeeeee; */
+}
+
+.mainContainer .mainBodyContent .sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer .mainBodyContent .sidebar ul li {
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #333333;
+}
+
+.mainContainer .mainBodyContent .sidebar ul li a {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    padding: 15px;
+    transition: all 0.25s linear;
+}
+
+.mainContainer .mainBodyContent .sidebar ul li a:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* -------------------------------------- Sidebar Stylesheet End -------------------------------------- */
+
+/* -------------------------------------- Slider Stylesheet Start ------------------------------------- */
+
+.mainContainer .mainBodyContent .splitSlideshow {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slider {
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slider * {
+    outline: none;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slider .item {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slider .item .text {
+    display: none;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slider .item img {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    position: absolute;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    bottom: 40px;
+    right: 40px;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slick-dots li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slick-dots li button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    opacity: 0.6;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slick-dots li button::before,
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slick-dots li button::after {
+    display: none;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow .slick-dots li.slick-active button {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow.slideshow-right {
+    left: 0;
+    z-index: 1;
+    width: 50vw;
+    pointer-events: none;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshow.slideshow-right .slider {
+    left: 0;
+    position: absolute;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshowText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 100vw;
+    /* pointer-events: none; */
+    /* overflow: hidden; */
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshowText .item > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshowText .item h2 {
+    font-size: 4.444rem;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+}
+
+.mainContainer .mainBodyContent .splitSlideshow .slideshowText .item h2 span {
+    display: block;
+    color: #ed646c;
+}
+
+/* -------------------------------------- Slider Stylesheet End --------------------------------------- */
+
+/* -------------------------------------- Home Stylesheet Start --------------------------------------- */
+
+.mainContainer .mainBodyContent .ourServices {
+    padding: 80px 0;
+}
+
+.mainContainer .mainBodyContent .ourServices > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 0 50px;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__heading h2 {
+    font-size: 3.333rem;
+    line-height: 1;
+    color: #201E1E;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__box.ourServices__box--margin {
+    margin-bottom: 50px;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__box .ourServices__img {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin: 0 0 20px;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__box .ourServices__img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__box .ourServices__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__box .ourServices__content h3 {
+    font-size: 1.667rem;
+    line-height: 1.2;
+    color: #2D315E;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+
+.mainContainer .mainBodyContent .ourServices .ourServices__box .ourServices__content p {
+    font-size: 1.111rem;
+    line-height: 1.4;
+    color: #201E1E;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .yourLifesWork {
+    background: #ffffff url('../images/yourLifesWork__bg.png') no-repeat right top / auto 100%;
+    padding: 120px 0;
+}
+
+.mainContainer .mainBodyContent .yourLifesWork > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .yourLifesWork .yourLifesWork__heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainContainer .mainBodyContent .yourLifesWork .yourLifesWork__heading h2 {
+    font-size: 2.222rem;
+    line-height: 1.2;
+    color: #2D4F78;
+    margin: 0 0 20px;
+}
+
+.mainContainer .mainBodyContent .yourLifesWork .yourLifesWork__heading p {
+    font-size: 1.111rem;
+    line-height: 1.5;
+    color: #201E1E;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .yourBestWork {
+    padding: 60px 0;
+}
+
+.mainContainer .mainBodyContent .yourBestWork > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .yourBestWork .yourBestWork__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.mainContainer .mainBodyContent .yourBestWork .yourBestWork__heading h2 {
+    font-size: 3.333rem;
+    line-height: 1;
+    color: #2D315E;
+    margin: 0 0 20px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples {
+    background: #ffffff url('../images/coreValuesAndPrinciples__bg.png') no-repeat center top / 100% auto;
+    padding: 320px 0 60px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main {
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.25);
+    padding: 60px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main .coreValuesAndPrinciples__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    margin: 0 0 60px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main .coreValuesAndPrinciples__heading h2 {
+    font-size: 3.333rem;
+    line-height: 1;
+    color: #2D315E;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main .coreValuesAndPrinciples__box {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 0 60px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main .coreValuesAndPrinciples__box h3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-family: var(--primaryFontFamily);
+    font-size: 1.667rem;
+    color: #2D315E;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 10px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main .coreValuesAndPrinciples__box h3 span {
+    display: inline-block;
+    font-size: 4.444rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #2D315E;
+    margin-right: 10px;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main .coreValuesAndPrinciples__box p {
+    font-size: 0.889rem;
+    color: #373435;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main .coreValuesAndPrinciples__buttonSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection {
+    padding: 80px 0;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    margin: 0 0 50px;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__heading h2 {
+    font-size: 3.333rem;
+    line-height: 1;
+    color: #201E1E;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__heading p {
+    font-size: 1.389rem;
+    line-height: 1.4;
+    color: #201E1E;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__box {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #848688;
+    margin: 0 0 60px;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__box .ourBlogsSection__img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__box .ourBlogsSection__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__box .ourBlogsSection__content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__box .ourBlogsSection__content h3 {
+    font-family: var(--primaryFontFamily);
+    font-size: 1.111rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #4B4B4D;
+    margin: 0 0 20px;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__box .ourBlogsSection__content h3 span {
+    display: block;
+    margin-top: 30px;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection .ourBlogsSection__box .ourBlogsSection__content p {
+    font-size: 1.111rem;
+    line-height: 1.75;
+    color: #4B4B4D;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .ourBlogsSection  .ourBlogsSection__buttonSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------------------------- Home Stylesheet End ----------------------------------------- */
+
+/* -------------------------------------- Banner Stylesheet Start ------------------------------------- */
+
+.mainContainer .mainBodyContent .mainBanner {
+    position: relative;
+    min-height: 100vh;
+}
+
+.mainContainer .mainBodyContent .mainBanner.mainBanner--privacy {
+    min-height: 50vh;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__content > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__content h2 {
+    font-size: 8.333rem;
+    font-family: var(--headingFontFamily);
+    font-weight: 400;
+    line-height: 1;
+    color: #ffffff;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__content h2 span {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__content h2 span::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #DE3612;
+    z-index: -1;
+}
+
+.mainContainer .mainBodyContent .mainBanner .mainBanner__content p {
+    font-size: 1.944rem;
+    font-family: var(--primaryFontFamily);
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* -------------------------------------- Banner Stylesheet End --------------------------------------- */
+
+/* -------------------------------------- Contact Us Stylesheet Start --------------------------------- */
+
+.mainContainer .mainBodyContent .mainContactUsForm > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__description {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 60px 0
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__description p {
+    font-size: 1.389rem;
+    font-family: var(--primaryFontFamily);
+    font-weight: 400;
+    line-height: 1.4;
+    color: #333333;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__formHeading {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__formHeading h2 {
+    font-size: 1.667rem;
+    font-family: var(--primaryFontFamily);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1A1A1A;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__formBox {
+    padding: 30px 0 60px;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__formBox .form-group {
+    margin: 0 0 30px;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__formBox .form-group .form-control {
+    font-size: 0.778rem;
+    background-color: #ffffff;
+    color: #848688;
+    border: 1px solid #848688;
+    border-radius: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    min-height: 42px;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__formBox .form-group textarea.form-control {
+    min-height: 120px;
+    resize: none;
+}
+
+.mainContainer .mainBodyContent .mainContactUsForm .mainContactUsForm__formBox .buttonButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* -------------------------------------- Contact Us Stylesheet End ----------------------------------- */
+
+/* -------------------------------------- About Us Stylesheet Start ----------------------------------- */
+
+.mainContainer .mainBodyContent .mainAboutUsContent {
+    padding: 80px 0;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent  > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box.customMargin {
+    margin-top: 50px;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #DE3612;
+    text-transform: uppercase;
+    padding: 0 0 20px;
+    margin: 0 0 30px;
+    position: relative;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #DE3612;
+    display: block;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box h3:hover::after {
+    width: 80px;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box p {
+    font-size: 1.111rem;
+    line-height: 1.75;
+    color: #201E1E;
+    margin: 0;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box p::first-letter {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #DE3612;
+}
+
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__getInTouch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__getInTouch .getInTouchButton {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #DE3612;
+    border: 2px solid #DE3612;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__getInTouch .getInTouchButton:hover {
+    background-color: transparent;
+    color: #DE3612;
+    border-color: #DE3612;
+    box-shadow: 0 0 20px rgb(214, 90, 18);
+}
+
+.mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__getInTouch .getInTouchButton:active {
+    transform: scale(0.95);
+}
+
+/* -------------------------------------- About Us Stylesheet End ------------------------------------- */
+
+/* -------------------------------------- Privacy Policy Stylesheet Start ----------------------------- */
+
+.mainContainer .mainBodyContent .mainPrivacyContent {
+    padding: 80px 0;
+}
+
+.mainContainer .mainBodyContent .mainPrivacyContent > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainBodyContent .mainPrivacyContent h4,
+.mainContainer .mainBodyContent .mainPrivacyContent h5 {
+    margin: 60px 0 10px;
+}
+
+.mainContainer .mainBodyContent .mainPrivacyContent p,
+.mainContainer .mainBodyContent .mainPrivacyContent li {
+    line-height: 1.75;
+    margin: 0 0 1rem;
+}
+
+.mainContainer .mainBodyContent .mainPrivacyContent p:last-child,
+.mainContainer .mainBodyContent .mainPrivacyContent li:last-child {
+    margin: 0;
+}
+
+/* -------------------------------------- Privacy Policy Stylesheet End ------------------------------- */
+
+/* -------------------------------------- Footer Stylesheet Start ------------------------------------- */
+
+.mainContainer .mainFooter {
+    background-color: #201E1E;
+    width: 100%;
+}
+
+.mainContainer .mainFooter > .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mainContainer .mainFooter .mainFooter__top {
+    display: flex;
+    flex-direction: column;
+
+    padding: 60px 0;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerLogo {
+    width: auto;
+    height: 75px;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerLogo a {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerLogo a img {
+    width: auto;
+    height: 100%;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerNavigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerNavigation ul {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerNavigation ul li {
+    display: block;
+    margin: 0 0 10px;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerNavigation ul li:last-child {
+    margin: 0;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .footerNavigation ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .contactUsDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .contactUsDetails ul {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .contactUsDetails ul li {
+    display: block;
+    margin: 0 0 10px;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .contactUsDetails ul li.heading {
+    font-size: 1.111rem;
+    font-family: var(--primaryFontFamily);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .contactUsDetails ul li:last-child {
+    margin: 0;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .contactUsDetails ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.mainContainer .mainFooter .mainFooter__top  .contactUsDetails ul li a span {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom {
+    padding: 20px 0;
+    border-top: 1px solid #ffffff;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom .copyRightSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom .copyRightSection p {
+    font-size: 1.111rem;
+    font-family: var(--primaryFontFamily);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom  .footerNavigation {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom  .footerNavigation ul {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom  .footerNavigation ul li {
+    display: block;
+    margin: 0 0 0 20px;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom  .footerNavigation ul li:first-child {
+    margin: 0;
+}
+
+.mainContainer .mainFooter .mainFooter__bottom  .footerNavigation ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* -------------------------------------- Footer Stylesheet End --------------------------------------- */
+
+/* -------------------------------------- Body Content Stylesheet End --------------------------------- */
+
+/* -------------------------------------- Responsive Stylesheet Start --------------------------------- */
+
+@media (max-width: 1366px) {
+    :root {
+        --defaultFontSize: 14px;
+    }
+
+    .mainContainer .mainHeader .mainHeader__logo {
+        height: 50px;
+    }
+
+    .mainContainer .mainHeader .mainHeader__right .subMenusSection ul.secondLevelMenuLists {
+        min-width: 800px;
+    }
+    
+    .mainContainer .mainBodyContent .coreValuesAndPrinciples {
+        padding: 220px 0 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    * > .container-fluid {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    br {
+        display: none !important;
+    }
+
+    .mainContainer .mainHeader {
+        padding: 20px 0;
+    }
+
+    .mainContainer .mainHeader .mainHeader__right .mainHeader__burgerButtonBox {
+        display: flex;
+    }
+
+    .mainContainer .mainHeader .mainHeader__right .mainHeader__navigation {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #201E1E;
+        transition: all 0.25s linear;
+        transform-origin: 0 0 0;
+        transform: scaleY(0);
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .mainContainer .mainHeader .mainHeader__right .mainHeader__navigation.show {
+        transform: scaleY(1);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .mainContainer .mainHeader .mainHeader__right .mainHeader__navigation>ul {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .mainContainer .mainHeader .mainHeader__right .mainHeader__navigation>ul>li a {
+        font-size: 1.25rem;
+        padding: 10px;
+    }
+
+    .mainContainer .mainBodyContent .ourServices .ourServices__box {
+        margin-bottom: 50px;
+    }
+
+    .mainContainer .mainBodyContent .coreValuesAndPrinciples .coreValuesAndPrinciples__main {
+        padding: 30px;
+    }
+
+    .mainContainer .mainBodyContent .mainAboutUsContent .mainAboutUsContent__box {
+        margin-top: 50px;
+    }
+
+    .mainContainer .mainBodyContent .mainBanner .mainBanner__content h2 {
+        font-size: 6rem;
+    }
+
+    .mainContainer .mainFooter .mainFooter__top {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .mainContainer .mainFooter .mainFooter__top .footerLogo,
+    .mainContainer .mainFooter .mainFooter__top .footerNavigation,
+    .mainContainer .mainFooter .mainFooter__top .footerNavigation {
+        margin: 0 0 30px;
+    }
+
+    .mainContainer .mainFooter .mainFooter__bottom .copyRightSection {
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 0 20px;
+    }
+
+    .mainContainer .mainFooter .mainFooter__bottom .footerNavigation {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* -------------------------------------- Responsive Stylesheet End ----------------------------------- */

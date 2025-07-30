@@ -1,0 +1,35 @@
+extends layout
+
+block header
+    include partials/header
+
+block content
+    section.mainBanner.mainBanner--about
+        .mainBanner__img
+            img(src="images/mainBanners/contactBanner.png" alt="")
+        .mainBanner__content
+            .container-fluid
+                h2 <span>about</span> Us
+                p How can we help you?
+    section.mainAboutUsContent
+        .container-fluid
+            .row
+                .col-md-4
+                    .mainAboutUsContent__box
+                        h3 WHAT WE DO
+                        p NSG is an award-winning, full-service global digital solutions group. Our pride lies in building distinct business units Software Development using AI/ML, Mobility, Ecommerce, and Digital Marketing each equipped with unique processes tailored to help our clients achieve their goals.
+                .col-md-4
+                    .mainAboutUsContent__box
+                        h3 OUR MISSION
+                        p Our mission is to drive measurable growth for businesses through online application solutions that seamlessly translate data into actionable insights, empowering impactful customer interactions at scale.
+                .col-md-4
+                    .mainAboutUsContent__box
+                        h3 OUR JOURNEY
+                        p Established in Jaipur, blend of passion, perseverance, and continuous learning. By embracing challenges and celebrating successes, we are building a foundation for a sustainable and impactful business. We look forward to sharing more of our experiences as we navigate this exciting adventure.
+                .col-md-4
+                    .mainAboutUsContent__box.customMargin
+                        h3 CLIENT SUCCESS
+                        p Our clients have validated their MVPs and secured funding from industry leaders like Google, A16Z, Dreamit Ventures, Bunat Ventures, and more.
+                .col-md-12
+                    .mainAboutUsContent__getInTouch
+                        a(href=`contact${fileExtension}`).getInTouchButton Get In Touch

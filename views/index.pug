@@ -1,0 +1,141 @@
+extends layout
+
+block header
+    include partials/header
+
+block content
+    section.splitSlideshow
+        .slideshow
+            .slider
+                .item
+                    img(src="images/mainBanners/homeBanner01.png" alt="")
+                .item
+                    img(src="images/mainBanners/homeBanner02.png" alt="")
+                .item
+                    img(src="images/mainBanners/homeBanner03.png" alt="")
+        .slideshowText
+            .item
+                .container-fluid
+                    h2 Your Digital <span>Success</span> Starts here
+                    a.btn.btn-primary(href=`contact${fileExtension}`) Know More
+            .item
+                .container-fluid
+                    h2 Your Mobile <span>Success</span> Starts here
+                    a.btn.btn-primary(href=`contact${fileExtension}`) Know More
+            .item
+                .container-fluid
+                    h2 Marketing That <span>Makes A</span> Diffrence
+                    a.btn.btn-primary(href=`contact${fileExtension}`) Know More
+    section.ourServices
+        .container-fluid
+            .row
+                .col-md-12
+                    .ourServices__heading
+                        h2 Our Services
+                .col-md-4
+                    .ourServices__box.ourServices__box--margin
+                        .ourServices__img
+                            img(src="images/icons/ourServices__img01.png" alt="")
+                        .ourServices__content
+                            h3 ENTERPRISE SOFTWARE DEVELOPMENT
+                            p Create complex enterprise software, ensure reliable software integration, modernise your legacy system.
+                .col-md-4
+                    .ourServices__box.ourServices__box--margin
+                        .ourServices__img
+                            img(src="images/icons/ourServices__img02.png" alt="")
+                        .ourServices__content
+                            h3 ARTIFICIAL INTELLIGENCE
+                            p Custom AI-based solutions like machine and deep learning will help you automate any operation.
+                .col-md-4
+                    .ourServices__box.ourServices__box--margin
+                        .ourServices__img
+                            img(src="images/icons/ourServices__img03.png" alt="")
+                        .ourServices__content
+                            h3 SAAS APP DEVELOPMENT
+                            p Custom AI-based solutions like machine and deep learning will help you automate any operation.
+                .col-md-4
+                    .ourServices__box
+                        .ourServices__img
+                            img(src="images/icons/ourServices__img04.png" alt="")
+                        .ourServices__content
+                            h3 MOBILE APPLICATION DEVELOPMENT
+                            p Hire Ios & Android developers to build Native, hybrid & interactive mobile applications for businesses.
+                .col-md-4
+                    .ourServices__box
+                        .ourServices__img
+                            img(src="images/icons/ourServices__img05.png" alt="")
+                        .ourServices__content
+                            h3 ECOMMERCE DEVELOPMENT
+                            p Our custom ecommerce development solution features scalability to match any business requirement and are equipped.
+                .col-md-4
+                    .ourServices__box
+                        .ourServices__img
+                            img(src="images/icons/ourServices__img06.png" alt="")
+                        .ourServices__content
+                            h3 DevOps
+                            p Design, build, and optimize automated software delivery processes and systems.
+    section.yourLifesWork
+            .container-fluid
+                .row
+                    .col-md-6
+                        .yourLifesWork__heading
+                            h2 Your life's work, <br />powered by our life's work
+                            p A unique and powerful software suite to transform <br />the way you work. Designed for businesses of all <br />sizes, built by a company that values your privacy.
+    section.yourBestWork
+        .container-fluid
+            .yourBestWork__heading
+                h2 Ready to do your best work? <br/>Let's get you started.
+                a.btn.btn-secondary(href="javascript:void(0)") KNOW MORE
+    section.coreValuesAndPrinciples
+        .container-fluid
+            .coreValuesAndPrinciples__main
+                .row
+                    .col-md-12
+                        .coreValuesAndPrinciples__heading
+                            h2 The core values and principles <br/>that drive us
+                    .col-md-4
+                        .coreValuesAndPrinciples__box
+                            h3 <span>1</span>Long-term <br/>commitment
+                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    .col-md-4
+                        .coreValuesAndPrinciples__box
+                            h3 <span>2</span>Focus on research <br/>and development
+                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    .col-md-4
+                        .coreValuesAndPrinciples__box
+                            h3 <span>3</span>Customer-first <br/>philosophy
+                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    .col-md-12
+                        .coreValuesAndPrinciples__buttonSection
+                            a.btn.btn-secondary(href="javascript:void(0)") KNOW MORE
+    section.ourBlogsSection
+        .container-fluid
+            .row
+                .col-md-12
+                    .ourBlogsSection__heading
+                        h2 Our Blogs
+                        p NSG builds custom software development solutions that drive <br/>measurable growth for businesses, at scale
+                .col-md-4
+                    .ourBlogsSection__box
+                        .ourBlogsSection__img
+                            img(src="images/ourBlogsSection__img01.png" alt="")
+                        .ourBlogsSection__content
+                            h3 SEO Insights: <span>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</span>
+                            p Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                .col-md-4
+                    .ourBlogsSection__box
+                        .ourBlogsSection__img
+                            img(src="images/ourBlogsSection__img02.png" alt="")
+                        .ourBlogsSection__content
+                            h3 Web Development: <span>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</span>
+                            p Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                .col-md-4
+                    .ourBlogsSection__box
+                        .ourBlogsSection__img
+                            img(src="images/ourBlogsSection__img03.png" alt="")
+                        .ourBlogsSection__content
+                            h3 Industry-Specific Insights: <span>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</span>
+                            p Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                .col-md-12
+                    .ourBlogsSection__buttonSection
+                        a.btn.btn-secondary(href="javascript:void(0)") KNOW MORE
